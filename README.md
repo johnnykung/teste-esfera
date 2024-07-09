@@ -27,6 +27,6 @@ Após a criação das tabelas no AWS Athena, é feito o carregamento dentro do a
 
 Depois disso é aplicado alguns recursos de storytelling, como a disposição dos cards otimizados para leitura em Z e recursos visuais como barras para identificar o tamanho relativo de cada número. Também é possível filtrar o valor de um dado específico da tabela nos cards acima, basta apenas selecionar o dado que você quiser
 
-<img src="https://raw.githubusercontent.com/johnnykung/teste-esfera/main/Captura%20de%20tela%202024-07-09%20195957.png?token=GHSAT0AAAAAACSZHTCORKALMGW6NYDOUWLSZUNYFRQ" alt="Imagem da interface gráfica do Airflow executando a DAG de ETL dos CSVs">
+<img src="https://github.com/johnnykung/teste-esfera/blob/main/Captura%20de%20tela%202024-07-09%20195957.png?raw=true" alt="Imagem da interface gráfica do Airflow executando a DAG de ETL dos CSVs">
 
 link dashboard: https://sa-east-1.quicksight.aws.amazon.com/sn/dashboards/212b5190-26c3-435e-838b-769b94224252
