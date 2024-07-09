@@ -1,0 +1,18 @@
+[2024-07-08T01:22:16.382-0300] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-07-08T01:22:16.404-0300] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: upload_multiple_csvs_to_s3_dag.clean_data manual__2024-07-08T04:01:18.314881+00:00 [queued]>
+[2024-07-08T01:22:16.418-0300] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: upload_multiple_csvs_to_s3_dag.clean_data manual__2024-07-08T04:01:18.314881+00:00 [queued]>
+[2024-07-08T01:22:16.419-0300] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-07-08T01:22:16.446-0300] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): clean_data> on 2024-07-08 04:01:18.314881+00:00
+[2024-07-08T01:22:16.461-0300] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'upload_multiple_csvs_to_s3_dag', 'clean_data', 'manual__2024-07-08T04:01:18.314881+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_s3.py', '--cfg-path', '/tmp/tmpimcqgzau']
+[2024-07-08T01:22:16.463-0300] {standard_task_runner.py:91} INFO - Job 24: Subtask clean_data
+[2024-07-08T01:22:16.470-0300] {logging_mixin.py:188} WARNING - /home/johnny/airflow/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=69827) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-07-08T01:22:16.471-0300] {standard_task_runner.py:63} INFO - Started process 69842 to run task
+[2024-07-08T01:22:16.536-0300] {task_command.py:426} INFO - Running <TaskInstance: upload_multiple_csvs_to_s3_dag.clean_data manual__2024-07-08T04:01:18.314881+00:00 [running]> on host LAPTOP-V3FS4O6J.
+[2024-07-08T01:22:16.698-0300] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='upload_multiple_csvs_to_s3_dag' AIRFLOW_CTX_TASK_ID='clean_data' AIRFLOW_CTX_EXECUTION_DATE='2024-07-08T04:01:18.314881+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-08T04:01:18.314881+00:00'
+[2024-07-08T01:22:16.701-0300] {taskinstance.py:430} INFO - ::endgroup::
+[2024-07-08T01:22:16.892-0300] {python.py:237} INFO - Done. Returned value was: None
+[2024-07-08T01:22:16.892-0300] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-07-08T01:22:16.900-0300] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=upload_multiple_csvs_to_s3_dag, task_id=clean_data, run_id=manual__2024-07-08T04:01:18.314881+00:00, execution_date=20240708T040118, start_date=20240708T042216, end_date=20240708T042216
+[2024-07-08T01:22:16.973-0300] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-07-08T01:22:17.006-0300] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-07-08T01:22:17.015-0300] {local_task_job_runner.py:222} INFO - ::endgroup::
