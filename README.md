@@ -1,15 +1,7 @@
 # Teste Engenheiro de Dados - Esfera
 
 1 - Construção do ETL
-Neste teste, você será responsável por desenvolver um processo de ETL para processar arquivos CSV
-e armazenar os dados em um banco de dados, conforme especificado. Os dados disponíveis
-representam o orçamento do Estado de São Paulo de 2019. Os requisitos são os seguintes:
-
-• Adequar os tipos de dados para os mais apropriados.
-
-• Utilizar Python e/ou SQL para processamento dos dados.
-
-• Hospedar o código do projeto e fornecer uma explicação detalhada no GitHub.
+A orquestração dos 
 
 Entregáveis:
 Os dados tratados e em tabelas no banco de dados.
