@@ -26,3 +26,5 @@ Esse KPI é um insight novo que pode ajudar na tomada de decisão, pois o seu va
 Após a criação das tabelas no AWS Athena, é feito o carregamento dentro do ambiente do AWS QuickSight das 3 tabelas: Receita, Despesas e Margem.
 
 Depois disso é aplicado alguns recursos de storytelling, como a disposição dos cards otimizados para leitura em Z e recursos visuais como barras para identificar o tamanho relativo de cada número. Também é possível filtrar o valor de um dado específico da tabela nos cards acima, basta apenas selecionar o dado que você quiser
+
+<img src="<img src="https://github.com/johnnykung/teste-esfera/blob/main/Captura%20de%20tela%202024-07-08%20012402.png?raw=true" alt="Imagem da interface gráfica do Airflow executando a DAG de ETL dos CSVs">" alt="Imagem da interface gráfica do Airflow executando a DAG de ETL dos CSVs">
