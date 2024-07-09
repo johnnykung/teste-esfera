@@ -6,7 +6,7 @@ A orquestração dos arquivos python foi feita pelo Apache Airflow, foi feita um
 
 A segunda task é a "upload_task" que é responsável pela ingestão dos dados tratados em um bucket do s3, nesta task é utilizado o S3 Hook disponibilizado pelo próprio Airflow.
 
-<img src="https://imgbox.com/AHrraJNw" alt="Imagem da interface gráfica do Airflow executando a DAG de ETL dos CSVs">
+<img src="https://github.com/johnnykung/teste-esfera/blob/main/Captura%20de%20tela%202024-07-08%20012402.png?raw=true" alt="Imagem da interface gráfica do Airflow executando a DAG de ETL dos CSVs">
 
 
 2 - Leitura dos dados no bucket S3 pelo AWS Athena
