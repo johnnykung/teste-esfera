@@ -1,50 +1,25 @@
 # Teste Engenheiro de Dados - Esfera
 
 1 - Construção do ETL
-A orquestração dos 
+A orquestração dos arquivos python foi feita pelo Apache Airflow, foi feita uma DAG que orquestra a limpeza/tratamento dos dados com a task "clean_data_task" utilizando a biblioteca pandas para extração dos arquivos CSV e a limpeza/transformação dos respectivos dataframes, como inserção de colunas, limpeza de dados desnecessários, transformação dos valores para float, entre outros.
 
-Entregáveis:
-Os dados tratados e em tabelas no banco de dados.
+A segunda task é a "upload_task" que é responsável pela ingestão dos dados tratados em um bucket do s3, nesta task é utilizado o S3 Hook disponibilizado pelo próprio Airflow.
 
-2 - Orquestração de Tarefas (Não obrigatório, mas é um diferencial)
-O objetivo deste exercício é avaliar o conhecimento em automação do fluxo de dados.
-O candidato tem liberdade para demonstrar seus conhecimentos em orquestração,
-infraestrutura e conteinerização do projeto utilizando Docker.
+<img src="https://imgbox.com/AHrraJNw" alt="Imagem da interface gráfica do Airflow executando a DAG de ETL dos CSVs">
 
-Entregáveis:
-A ferramenta de orquestração deve incluir cada etapa do ETL, sendo preferencialmente
-Airflow.
 
-3 – Visualização e análise de dados
-Criar um painel em uma ferramenta de dataviz para responder quais são as 5 maiores fontes de
-recursos e os 5 maiores tipos de despesa.
-O candidato tem liberdade para demonstrar insights que achar pertinente.
-# Teste Engenheiro de Dados - Esfera
+2 - Leitura dos dados no bucket S3 pelo AWS Athena
+Nesta etapa, com os dados tratados e carregados no S3, é feita algumas consultas na linguagem SQL dentro do AWS Athena para construção do banco de dados que irá alimentar a ferramenta de data vizz AWS QuickSight.
 
-1 - Construção do ETL
-Neste teste, você será responsável por desenvolver um processo de ETL para processar arquivos CSV
-e armazenar os dados em um banco de dados, conforme especificado. Os dados disponíveis
-representam o orçamento do Estado de São Paulo de 2019. Os requisitos são os seguintes:
+Para isso foram implementados os cõdigos em SQL que estão na pasta: receita.sql, despesas.sql, inner_join.sql, margem.sql.
 
-• Adequar os tipos de dados para os mais apropriados.
+Com exceção do "inner_join.sql", todos os códigos são criação de tabelas a partir dos dados tratados dentro do S3, utilizando o SerDe para leitura desses arquivos em formato CSV. O código do "inner_join.sql" é um inner join entre as tabelas de receita e despesas a fim de coletar os dados para criação da tabela margem (margem.sql), com isso eu consigo calcular a coluna de "margem" a partir da fórmula: (receita - despesa)/receita.
 
-• Utilizar Python e/ou SQL para processamento dos dados.
+Esse KPI é um insight novo que pode ajudar na tomada de decisão, pois o seu valor pode definir o quanto de "sobra" cada recurso oferece (descrição um pouco mais completa no dashboard).
 
-• Hospedar o código do projeto e fornecer uma explicação detalhada no GitHub.
 
-Entregáveis:
-Os dados tratados e em tabelas no banco de dados.
 
-2 - Orquestração de Tarefas (Não obrigatório, mas é um diferencial)
-O objetivo deste exercício é avaliar o conhecimento em automação do fluxo de dados.
-O candidato tem liberdade para demonstrar seus conhecimentos em orquestração,
-infraestrutura e conteinerização do projeto utilizando Docker.
+3 – Visualização e análise de dados no AWS QuickSight
+Após a criação das tabelas no AWS Athena, é feito o carregamento dentro do ambiente do AWS QuickSight das 3 tabelas: Receita, Despesas e Margem.
 
-Entregáveis:
-A ferramenta de orquestração deve incluir cada etapa do ETL, sendo preferencialmente
-Airflow.
-
-3 – Visualização e análise de dados
-Criar um painel em uma ferramenta de dataviz para responder quais são as 5 maiores fontes de
-recursos e os 5 maiores tipos de despesa.
-O candidato tem liberdade para demonstrar insights que achar pertinente.
+Depois disso é aplicado alguns recursos de storytelling, como a disposição dos cards otimizados para leitura em Z e recursos visuais como barras para identificar o tamanho relativo de cada número. Também é possível filtrar o valor de um dado específico da tabela nos cards acima, basta apenas selecionar o dado que você quiser
