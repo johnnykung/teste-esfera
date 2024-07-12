@@ -29,4 +29,8 @@ Depois disso é aplicado alguns recursos de storytelling, como a disposição do
 
 <img src="https://github.com/johnnykung/teste-esfera/blob/main/Captura%20de%20tela%202024-07-09%20195957.png?raw=true" alt="Imagem da interface gráfica do Airflow executando a DAG de ETL dos CSVs">
 
+Próximos passos:
+- Automatizar a leitura do airflow para ler cada vez que um arquivo .csv for adicionado (implementação de triggers);
+- Implementar ranks no QuickSight;
+
 link dashboard: https://sa-east-1.quicksight.aws.amazon.com/sn/dashboards/212b5190-26c3-435e-838b-769b94224252
